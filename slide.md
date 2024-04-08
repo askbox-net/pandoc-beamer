@@ -8,8 +8,8 @@ fontsize: 9pt
 #theme: "Frankfurt"
 theme: "metropolis"
 colortheme: "beaver"
-fonttheme: "professionalfonts"
-mainfont: "Hiragino Mincho Pro"
+#fonttheme: "professionalfonts"
+#mainfont: "Hiragino Mincho Pro"
 aspectratio: 169
 urlcolor: red
 linkstyle: bold
@@ -17,11 +17,13 @@ linkstyle: bold
 #logo: logo.png
 
 header-includes: |
-    \usepackage{zxjatype}
-    \usepackage[haranoaji,deluxe]{zxjafont}
+    \usepackage{luatexja-fontspec}
+    \setmainfont[Ligatures=TeX]{Times New Roman}
     \usepackage{tikz}
     \usetikzlibrary{mindmap}
     <!--
+    \usepackage{zxjatype}
+    \usepackage[haranoaji,deluxe]{zxjafont}
     \setCJKmainfont[Scale=0.5]{Hiragino Mincho Pro}
     \usetheme[
         block=fill, % ブロックに背景をつける
@@ -35,7 +37,7 @@ header-includes: |
         \href{https://www.askbox.net}{https://www.askbox.net}
         \hfill
         更新日: \number\year 年\number\month 月\number\day 日
-        \usebeamercolor[fg]{page number in head/foot}
+        \leavevmode\kern1em
         \usebeamercolor[fg]{page number in head/foot}
         \usebeamerfont{page number in head/foot}
         \insertframenumber\,/\,\inserttotalframenumber\kern1em\vskip2pt
